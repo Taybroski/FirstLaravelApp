@@ -7,6 +7,45 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## Useful Commands
+
+<h3><u>New App:</u></h3>
+<code>composer create-project laravel/laravel project_name</code>
+<p>Generates the Laravel framework.</p>
+
+<h3><u>MVC:</u></h3>
+<code>php artisan make:controller ControllerName</code>
+<p>Generates a controller file in the Controllers folder.</p> 
+<code>php artisan make:controller ControllerName --resource -m</code>
+<p>--resources generates CRUD functions within the controller.</p>
+
+<code>php artisan make:model Model</code>
+<p>Generates a Model file in the Http folder.</p>
+<code>php artisan make:model Model -m</code>
+<p>-m will generate a new table in the database.</p>
+
+<h3><u>Server:</u></h3>
+<code>php artisan serve</code>
+<p>Runs a local server at localhost:8000. 'CTRL + C' to stop.</p>
+
+<h3>Database:</h3>
+<code>php artisan make:migration add_obvious_migration_name</code>
+<p>Generates a new migration file.</p>
+
+<code>php artisan migrate</code>
+<p>Performs a database migration.</p>
+
+<code>php artisan rollback</code>
+<p>Performs a database rollback to the last migration.</p>
+
+<h3>Users:</h3>
+<code>php artisan make:auth</code>
+<p>Initializes Laravel's built in user authentication system. Running this command will ask if you would like to replace your app.blade.php file. Be sure to save your code in a seperate file before typing 'yes' and 'enter'.</p>
+
+<code>auth()->user()->attribute</code>
+<p>Scope into the users table with this command.</p>
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
