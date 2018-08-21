@@ -11,12 +11,15 @@
 					<p>{!!str_limit($p->body, 30)!!}</p>
 				</div>
 				</div>
-				<small>By {{$p->author}} - {{$p->created_at}}</small>
+				@if ($p->author == '')
+					<small>By Unknown - {{$p->created_at}}</small>
+				@else
+					<small>By {{$p->author}} - {{$p->created_at}}</small>
+				@endif
 			</div>
 		@endforeach
 		{{-- Pagination Links --}}
 		{{$posts->links()}} 
-		<a href="/posts/create">New Post</a>
 	@else
 		<p>No posts found</p>
 	@endif

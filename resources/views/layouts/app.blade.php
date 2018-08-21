@@ -28,6 +28,11 @@
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script>
         CKEDITOR.replace( 'article-ckeditor' );
+
+        // Confirm Post Delete Script
+        function ConfirmDelete(){
+        return confirm('Are you sure?');
+        }
     </script>
 </body>
 </html>

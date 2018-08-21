@@ -51,9 +51,4 @@
 </div>
 @endsection
 
-{{-- Confirm Post Delete Script --}}
-<script>
-    function ConfirmDelete(){
-    return confirm('Are you sure?');
-    }
-</script>
+

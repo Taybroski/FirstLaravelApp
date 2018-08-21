@@ -17,24 +17,21 @@
 	<br />
 	<a href="/posts" class="btn btn-default">Back</a>
 	<hr>
-	<div class="split">
-		<a href="/posts/{{$post->id}}/edit" class="btn btn-info">Edit</a>
-		<div>
-			{!! Form::open(['action' => ['PostsController@destroy', $post->id], 
-											'method' => 'POST', 
-											'class' => 'pull-right', 
-											'onsubmit' => 'return ConfirmDelete()']) 
-			!!}
-				{!! Form::hidden('_method', 'DELETE') !!}
-				{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-			{!! Form::close() !!}
-		</div>
-	</div>
-
-	{{-- Confirm Post Delete Script --}}
-	<script>
-		function ConfirmDelete(){
-		return confirm('Are you sure?');
-		}
-	</script>
+	@if(!Auth::guest())
+		@if(Auth::user()->id == $post->user_id)
+			<div class="split">
+				<a href="/posts/{{$post->id}}/edit" class="btn btn-info">Edit</a>
+				<div>
+					{!! Form::open(['action' => ['PostsController@destroy', $post->id], 
+													'method' => 'POST', 
+													'class' => 'pull-right', 
+													'onsubmit' => 'return ConfirmDelete()']) 
+					!!}
+						{!! Form::hidden('_method', 'DELETE') !!}
+						{!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+					{!! Form::close() !!}
+				</div>
+			</div>
+		@endif
+	@endif
 @endsection
