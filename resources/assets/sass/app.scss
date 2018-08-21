@@ -54,6 +54,14 @@ End
 a:hover {
   text-decoration: none;
 }
+nav {
+	// margin-bottom: 10em;
+}
+.txt-center {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+}
 .mb-08 {
   margin-bottom: 0.8em;
   font-style: none !important;
@@ -92,4 +100,8 @@ div.row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.swap {
+  display: flex;
+  flex-direction: row-reverse;
 }

@@ -18,7 +18,7 @@
 			{{Form::hidden('_method', 'PUT')}}
 			{{-- Form Submit Button --}}
 			{{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
-		{!! Form::close() !!}
+		{!! Form::close() !!} 
 
 			{!! Form::open(['action' => ['PostsController@destroy', $post->id], 
 											'method' => 'POST', 

@@ -13,10 +13,15 @@
 			{{-- By using !! instead of {{}}, it will parse the HTML instead of the displaying raw code. --}}
 			{!!$post->body!!}
 		</div>
+		<div>
+			{{$post->cover_image}}
+		</div>
 	</div>
 	<br />
 	<a href="/posts" class="btn btn-default">Back</a>
 	<hr>
+
+	{{-- Edit / Delete buttons for auth users --}}
 	@if(!Auth::guest())
 		@if(Auth::user()->id == $post->user_id)
 			<div class="split">

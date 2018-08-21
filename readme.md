@@ -45,6 +45,10 @@
 <code>auth()->user()->attribute</code>
 <p>Scope into the users table with this command.</p>
 
+<h3>Connect Storage to Public:</h3>
+<code>php artisan storage:link</code>
+<p>This command will create a link between the aplications Storage folder and the Public folder. This means files in Storager can be accessed</p>
+
 
 ## About Laravel
 

@@ -52,16 +52,25 @@ class PostsController extends Controller
     public function store(Request $request) 
     {
         $this->validate($request, [
-            'title' => 'required',
-            'body'  => 'required'
+            'title'       => 'required',
+            'body'        => 'required',
+            'cover_image' => 'image|nullable|max:1999'
         ]);
+
+        // Handle file/image upload
+        if($request->hasFile('cover_image'){
+
+        } else {
+            $fileNameToStore = 'no_image.jpg';
+        }
 
         // Create a Post
         $post = new Post;
-        $post->title   = $request->input('title');
-        $post->body    = $request->input('body');
-        $post->user_id = auth()->user()->id;
-        $post->author = auth()->user()->name;
+        $post->title       = $request->input('title');
+        $post->body        = $request->input('body');
+        $post->cover_image = $request->input('cover_image');
+        $post->user_id     = auth()->user()->id;
+        $post->author      = auth()->user()->name;
         // $post->name    = auth()->user()->name;
         $post->save();
 
