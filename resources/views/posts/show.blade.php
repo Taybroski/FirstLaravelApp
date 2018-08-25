@@ -3,18 +3,15 @@
 @section('content')
 
 	<div>
-		<h3>{{$post->title}}</h3>
-		@if ($post->author == '')
-			<small>By Unknown - {{$post->created_at}}</small>
-		@else
-			<small>By {{$post->author}} - {{$post->created_at}}</small>
-		@endif
+		<img style="width:40%; border-radius:5px" src="/storage/cover_images/{{$post->cover_image}}">
+		<br />
+		<br />
+		<h1>{{$post->title}}</h1>
+		<small>By {{$post->author}} - {{$post->created_at}}</small>
+		<BR />
 		<div>
 			{{-- By using !! instead of {{}}, it will parse the HTML instead of the displaying raw code. --}}
 			{!!$post->body!!}
-		</div>
-		<div>
-			{{$post->cover_image}}
 		</div>
 	</div>
 	<br />

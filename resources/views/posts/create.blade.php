@@ -3,7 +3,7 @@
 @section('content')
 	<h1>Create Post</h1>
 	{{-- Form from LaravelCollective --}}
-	{!! Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/data' ]) !!}
+	{!! Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data' ]) !!}
     <div class="form-group">
 			{{-- Form Title --}}
 			{{Form::label('title', "Title")}}
@@ -17,9 +17,10 @@
 		</div>
 		<br />
 		{{-- File upload --}}
+		{{Form::label('upload', "Upload Image")}}
 		<div class="btn-row split swap">
 			<div class="form-group">
-				{{Form::file('cover_image')}}
+				{{Form::file('cover_image', null)}}
 			</div>
 			{{-- Form Submit Button --}}
 			{{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
