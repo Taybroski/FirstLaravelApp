@@ -43,7 +43,15 @@
                         </div>
                         <br />
                     @endif
-                <a class="btn btn-info" href="/posts/create/">Create Post</a>
+                    <div class="row">
+                        <a class="btn btn-info" href="/posts/create/">Create Post</a>
+                        @if(count($profile) === 0)
+                            <a class="btn btn-info" href="/profile/create/">Create Profile</a>
+                        @else
+                            <a class="btn btn-info" href="/profile/{{$profile}}/edit/">Edit Profile</a>
+                        @endif 
+                        <a class="btn btn-info" href="/profile/{{$profile}}">Profile</a>
+                    </div>
                 </div>
             </div>
         </div>

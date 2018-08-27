@@ -2,12 +2,12 @@
 
 @section('content')
 
-	<h1>{{$username}}</h1>
+	{{-- <h1>{{$user->name}}</h1> --}}
 
 	@if(count($posts) > 0)
 		@foreach($posts as $p)
-			<ul>
-				<li>{{$p->title}}</li>
+			<ul class="list-group">
+				<lic class="list-group-item">{{$p->title}}</li>
 			</ul>
 		@endforeach
 	@endif

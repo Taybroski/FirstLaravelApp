@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnsToUsersTable extends Migration
+class CreateProfilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class AddColumnsToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('forename');
             $table->string('surname');
+            $table->mediumText('bio');
             $table->integer('age');
-            $table->string('profile_image');
+            $table->string('gender');
+            $table->timestamps();
         });
     }
 
@@ -28,11 +31,6 @@ class AddColumnsToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('forename');
-            $table->dropColumn('surname');
-            $table->dropColumn('age');
-            $table->dropColumn('profile_image');
-        });
+        Schema::dropIfExists('profiles');
     }
 }
