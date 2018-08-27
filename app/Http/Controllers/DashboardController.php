@@ -22,7 +22,7 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() 
     {
         $user_id = auth()->user()->id;
         $user    = User::find($user_id);
